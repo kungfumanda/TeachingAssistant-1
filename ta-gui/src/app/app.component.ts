@@ -12,16 +12,19 @@ import { AlunoService } from './aluno.service';
 export class AppComponent {
    aluno: Aluno = {nome: "", cpf: "", email: "", login: ""};
    alunoService = new AlunoService();
-   alunos: Aluno[] = [];
    title = 'ta-gui';
+   alunos: Aluno[] = [];
+   cpfduplicado: boolean = false;
 
    gravar(a: Aluno): void {
      if (this.alunoService.gravar(a)) {
        this.alunos.push(a);
        this.aluno = {nome: "", cpf: "", email: "", login: ""};
      } else {
-       this.aluno.cpf = "";
-       alert("Já existe um aluno com esse CPF");
+       this.cpfduplicado = true;
      }
+  }
+  onMove(): void {
+      this.cpfduplicado = false;
   }
 }
