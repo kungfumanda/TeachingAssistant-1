@@ -12,10 +12,12 @@ import { AlunoService } from './aluno.service';
 export class AppComponent {
    aluno: Aluno = {nome: "", cpf: "", email: "", login: ""};
    alunoService = new AlunoService();
+   alunos: Aluno[] = [];
    title = 'ta-gui';
 
    gravar(a: Aluno): void {
      this.alunoService.gravar(a);
+     this.alunos.push(a);
      this.aluno = {nome: "", cpf: "", email: "", login: ""};
   }
 }
