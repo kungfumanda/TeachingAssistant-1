@@ -62,3 +62,4 @@ typings/
 
 # debug
 .vscode
+ta-gui/tslint.json
