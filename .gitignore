@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# angular related archives
+./ta-gui/node_modules
